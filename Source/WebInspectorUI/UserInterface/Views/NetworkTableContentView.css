@@ -1,0 +1,112 @@
+/*
+ * Copyright (C) 2017 Apple Inc. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY APPLE INC. AND ITS CONTRIBUTORS ``AS IS''
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL APPLE INC. OR ITS CONTRIBUTORS
+ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+ * THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+.content-view.network .navigation-bar .filter-bar {
+    background: none;
+}
+
+.content-view.network .network-table .icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    bottom: 1px;
+    vertical-align: middle;
+    -webkit-margin-end: 4px;
+}
+
+.network-table li:not(.filler) .cell.name {
+    cursor: pointer;
+}
+
+.network-table .cache-type {
+    color: var(--text-color-gray-medium);
+}
+
+.network-table .error {
+    color: var(--error-text-color);
+}
+
+body[dir=ltr] .network-table .cell.name > .status {
+    float: right;
+    margin-left: 4px;
+}
+
+body[dir=rtl] .network-table .cell.name > .status {
+    float: left;
+    margin-right: 4px;
+}
+
+.network-table .cell.name > .status .indeterminate-progress-spinner {
+    margin-top: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+.showing-detail .network-table .cell:not(.name) {
+    display: none;
+}
+
+.showing-detail .network-table .resizer:not(:first-of-type) {
+    display: none;
+}
+
+.network-table :not(.header) .cell:first-of-type {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.content-view.network .empty-content-placeholder {
+    position: absolute;
+    top: var(--navigation-bar-height);
+    bottom: 0;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--odd-zebra-stripe-row-background-color);
+    --empty-content-placeholder-start: 0;
+}
+
+body[dir=ltr] .content-view.network .empty-content-placeholder {
+    left: var(--empty-content-placeholder-start);
+}
+
+body[dir=rtl] .content-view.network .empty-content-placeholder {
+    right: var(--empty-content-placeholder-start);
+}
+
+.content-view.network .empty-content-placeholder > .message {
+    display: inline-block;
+    white-space: nowrap;
+
+    font-size: var(--sidebar-no-results-message-font-size);
+    color: var(--text-color-gray-medium);
+
+    padding: 5px 15px 6px;
+    line-height: 25px;
+    text-align: center;
+}
